@@ -2,7 +2,7 @@
 set -e
 
 echo ">> git clone"
-git clone git@github.com:michaelcontento/redux-storage.git
+git clone https://github.com/michaelcontento/redux-storage.git
 cd redux-storage
 
 echo ">> npm install"
