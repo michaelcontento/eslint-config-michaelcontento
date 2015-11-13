@@ -1,0 +1,26 @@
+{
+  "name": "eslint-config-michaelcontento",
+  "version": "0.1.0",
+  "description": "My eslint preset for validating your JavaScript",
+  "main": "index.js",
+  "author": "Michael Contento <michaelcontento@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:michaelcontento/eslint-config-michaelcontento.git"
+  },
+  "scripts": {
+    "postinstall": "./postInstall.sh"
+  },
+  "keywords": [
+    "eslint",
+    "es6",
+    "es2015",
+    "javascript"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "babel-eslint": "^4.1.5",
+    "eslint-config-airbnb": "^1.0.0",
+    "eslint-plugin-mocha-only": "0.0.3"
+  }
+}
