@@ -1,8 +1,8 @@
 # !/usr/bin/env bash
 set -e
 
-NODE_VERSION=$(node --version | cut -c2)
-if [ "${NODE_VERSION}" == "5" ]; then
+NODE_VERSION=$(node --version | cut -c1-2)
+if [ "${NODE_VERSION}" == "v5" ]; then
     echo ">> npm install peerDependencies as we're node v.5"
     npm install --ignore-scripts \
         babel-eslint \
@@ -15,6 +15,7 @@ echo ">> npm install eslint"
 npm install --ignore-scripts eslint > /dev/null
 
 echo ">> linking eslint-config-michaelcontento"
+rm -rf node_modules/eslint-config-michaelcontento
 ln -sf $(pwd) node_modules/eslint-config-michaelcontento
 
 echo ">> running eslint"
