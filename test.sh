@@ -2,7 +2,7 @@
 set -e
 
 NODE_VERSION=$(node --version | cut -c1-2)
-if [ "${NODE_VERSION}" == "v5" ]; then
+if [ "${NODE_VERSION}" = "v5" ]; then
     echo ">> npm install peerDependencies as we're node v.5"
     npm install --ignore-scripts \
         babel-eslint \
