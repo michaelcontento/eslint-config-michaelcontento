@@ -9,7 +9,7 @@ echo ">> npm install"
 npm install --ignore-scripts > /dev/null
 
 echo ">> npm install local eslint-config-michaelcontento"
-npm install ../ > /dev/null
+npm install ../
 
 echo ">> make lint"
 make lint

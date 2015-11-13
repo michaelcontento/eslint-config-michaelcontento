@@ -9,6 +9,7 @@
     "url": "git@github.com:michaelcontento/eslint-config-michaelcontento.git"
   },
   "scripts": {
+    "test": "./test.sh",
     "postinstall": "./postInstall.sh"
   },
   "keywords": [
