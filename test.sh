@@ -1,18 +1,23 @@
 # !/usr/bin/env bash
 set -e
 
+npmInstall() {
+    local name=$1
+    if [ ! -d node_modules/$name ]; then
+        echo ">> npm install $name"
+        npm install --ignore-scripts $name > /dev/null
+    fi
+}
+
 NODE_VERSION=$(node --version | cut -c1-2)
 if [ "${NODE_VERSION}" = "v5" ]; then
-    echo ">> npm install peerDependencies as we're node v.5"
-    npm install --ignore-scripts \
-        babel-eslint \
-        eslint-config-airbnb \
-        eslint-plugin-mocha-only \
-        > /dev/null
+    echo ">> ensuring peerDependencies as we're node v.5"
+    npmInstall babel-eslint
+    npmInstall eslint-config-airbnb
+    npmInstall eslint-plugin-mocha-only
 fi
 
-echo ">> npm install eslint"
-npm install --ignore-scripts eslint > /dev/null
+npmInstall eslint
 
 echo ">> linking eslint-config-michaelcontento"
 rm -rf node_modules/eslint-config-michaelcontento
