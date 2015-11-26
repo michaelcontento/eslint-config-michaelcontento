@@ -15,7 +15,9 @@ module.exports = {
         // Don't complain about sinon in tests
         "sinon": false,
         // Don't complain about should-BDD-style
-        "should": false
+        "should": false,
+        // Don't complain about babel-plugin-version-inline
+        "__VERSION__": false
     },
     "rules": {
         // We use 4 spaces as indentation
