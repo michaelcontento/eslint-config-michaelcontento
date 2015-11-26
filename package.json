@@ -11,6 +11,9 @@
   "scripts": {
     "test": "./test.sh"
   },
+  "files": [
+    "index.js"
+  ],
   "keywords": [
     "eslint",
     "es6",
