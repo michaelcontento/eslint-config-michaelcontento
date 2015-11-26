@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-michaelcontento",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "My eslint preset for validating your JavaScript",
   "main": "index.js",
   "author": "Michael Contento <michaelcontento@gmail.com>",
