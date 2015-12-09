@@ -12,7 +12,8 @@
     "test": "./test.sh"
   },
   "files": [
-    "index.js"
+    "index.js",
+    "rules.js"
   ],
   "keywords": [
     "eslint",
