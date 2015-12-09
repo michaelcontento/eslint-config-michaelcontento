@@ -16,7 +16,7 @@
 
 ## Installation Node >=5.0
 
-    npm install --save eslint-config-michaelcontento babel-eslint eslint-config-airbnb eslint-plugin-mocha-only
+    npm install --save eslint-config-michaelcontento eslint-plugin-mocha-only
 
 ## Todo
 

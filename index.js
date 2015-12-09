@@ -1,42 +1,24 @@
-module.exports = {
-    "extends": [
-        "eslint-config-airbnb/base"
-    ],
-    "parser": "babel-eslint",
-    "plugins": [
-        // Fail if we left a .only in our tests
-        "eslint-plugin-mocha-only"
-    ],
-    "env": {
-        // Enable all global mocha functions
-        "mocha": true
-    },
-    "globals": {
-        // Don't complain about sinon in tests
-        "sinon": false,
-        // Don't complain about should-BDD-style
-        "should": false,
-        // Don't complain about babel-plugin-version-inline
-        "__VERSION__": false
-    },
-    "rules": {
-        // We use 4 spaces as indentation
-        "indent": [2, 4],
+var merge = require('merge').recursive;
 
-        // Ignore dangling commas
-        "comma-dangle": [0, "never"],
+function resolveExtends(rule) {
+    while (rule.extends.length > 0) {
+        var subRuleName = rule.extends.shift();
 
-        // Don't complain about BDD style tests
-        "no-unused-expressions": [0],
+        var subRule = require(subRuleName);
+        var newRules = subRule.extends || [];
 
-        // Allow us to comment-out unused function arguments like:
-        //     function fooBar(usedArg/*, unusedArg */) {}
-        // NOTE: This extends airbnb/base only with new markers!
-        "spaced-comment": [2, "always", {
-            "markers": [
-                "=", "!", // airbnb/base
-                ",", "{"  // our addition
-            ]
-        }]
+        rule.extends = newRules.concat(rule.extends);
+        delete subRule.extends;
+
+        merge(rule, subRule);
     }
-};
+
+    return rule;
+}
+
+module.exports = resolveExtends({
+    "extends": [
+        "eslint-config-airbnb/base",
+        "./rules"
+    ]
+});

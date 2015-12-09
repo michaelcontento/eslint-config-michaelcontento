@@ -12,8 +12,6 @@ npmInstall() {
 NODE_VERSION=$(node --version | cut -c1-2)
 if [ "${NODE_VERSION}" = "v5" ]; then
     echo ">> ensuring peerDependencies as we're node v.5"
-    npmInstall babel-eslint
-    npmInstall eslint-config-airbnb
     npmInstall eslint-plugin-mocha-only
 fi
 
