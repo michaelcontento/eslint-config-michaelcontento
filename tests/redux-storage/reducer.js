@@ -46,11 +46,11 @@ function myMerge(oldState, newState) {
     return result;
 }
 
-export default function(reducer) {
+export default (reducer) => {
     return (state, action) => reducer(
         action.type === LOAD
             ? myMerge(state, action.payload)
             : state,
         action
     );
-}
+};

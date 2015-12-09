@@ -17,7 +17,7 @@ function warnAboutConfusingFiltering(blacklist, whitelist) {
     }
 }
 
-export default function(engine, actionBlacklist = [], actionWhitelist = []) {
+export default (engine, actionBlacklist = [], actionWhitelist = []) => {
     // Also don't save if we process our own actions
     const blacklistedActions = [...actionBlacklist, LOAD, SAVE];
 
@@ -44,4 +44,4 @@ export default function(engine, actionBlacklist = [], actionWhitelist = []) {
             return result;
         };
     };
-}
+};
