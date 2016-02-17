@@ -26,8 +26,8 @@
     "eslint-plugin-mocha-only": "0.0.3"
   },
   "dependencies": {
-    "babel-eslint": "^4.1.6",
-    "eslint-config-airbnb": "^2.0.0",
+    "babel-eslint": "^5.0.0",
+    "eslint-config-airbnb": "^5.0.1",
     "merge": "^1.2.0"
   }
 }
